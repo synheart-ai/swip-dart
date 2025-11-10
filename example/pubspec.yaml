@@ -1,0 +1,45 @@
+name: swip_example
+description: Example Flutter app demonstrating SWIP integration
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # SWIP SDK (local dependency)
+  swip:
+    path: ../
+  
+  # UI
+  cupertino_icons: ^1.0.2
+  
+  # Storage
+  sqflite: ^2.3.3
+  path: ^1.9.0
+  uuid: ^4.4.0
+  
+  # File sharing
+  share_plus: ^7.2.1
+  path_provider: ^2.1.1
+  
+  # HTTP client and secure storage
+  http: ^1.2.0
+  flutter_secure_storage: ^9.0.0
+  device_info_plus: ^12.2.0
+  package_info_plus: ^8.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  
+  # Assets
+  assets:
+    - assets/ml/

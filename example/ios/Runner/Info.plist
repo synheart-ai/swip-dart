@@ -45,5 +45,11 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSHealthShareUsageDescription</key>
+	<string>This app needs access to your health data to calculate wellness scores and emotion recognition.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>This app needs access to update your health data for wellness tracking.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>This app needs access to motion data to calculate wellness scores.</string>
 </dict>
 </plist>

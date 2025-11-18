@@ -246,6 +246,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.2"
+  flutter_onnxruntime:
+    dependency: transitive
+    description:
+      name: flutter_onnxruntime
+      sha256: "55842e69293ec52c07f3065049ff7641e94e8a6cca3f659a913d5401a3994424"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.6.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -273,7 +281,7 @@ packages:
     source: hosted
     version: "2.3.2"
   health:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: health
       sha256: ec6ba8485bb86cac9001fe721811dae470172d0a153ad6778e77fb1ff975dd8f
@@ -703,17 +711,19 @@ packages:
   synheart_emotion:
     dependency: "direct main"
     description:
-      path: "../../../synheart-emotion"
-      relative: true
-    source: path
-    version: "0.1.0"
+      name: synheart_emotion
+      sha256: "0c4f3379878a8ca466fea30a0d1b257b915ec12952c9489b4db853351c53415a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
   synheart_wear:
     dependency: "direct main"
     description:
-      path: "../../../synheart-wear/packages/synheart_wear"
-      relative: true
-    source: path
-    version: "0.1.1"
+      name: synheart_wear
+      sha256: c0ce1e3279b4f8369a16d5117906d26d4355a48a5f913d8a89a6c5cd2d9c9dca
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.2"
   term_glyph:
     dependency: transitive
     description:

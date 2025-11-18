@@ -1,11 +1,30 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:swip/swip.dart';
 import 'screens/diagnostics_screen.dart';
 import 'storage/database.dart';
 import 'storage/storage_service.dart';
 
 void main() {
+  // Catch and log Flutter framework errors
+  FlutterError.onError = (FlutterErrorDetails details) {
+    FlutterError.presentError(details);
+    if (kDebugMode) {
+      print('Flutter Error: ${details.exception}');
+      print('Stack trace: ${details.stack}');
+    }
+  };
+
+  // Catch async errors
+  PlatformDispatcher.instance.onError = (error, stack) {
+    if (kDebugMode) {
+      print('Platform Error: $error');
+      print('Stack trace: $stack');
+    }
+    return true;
+  };
+
   runApp(const SWIPExampleApp());
 }
 
@@ -64,9 +83,16 @@ class _SWIPExampleHomePageState extends State<SWIPExampleHomePage> {
       ),
     );
     _storage.attachToManager(_swipManager);
-    // Warm up DB and ensure user exists
-    AppDatabase.instance.database;
-    _storage.initUser(userId: _userId);
+    // Warm up DB and ensure user exists - wrap in try-catch to prevent crashes
+    try {
+      AppDatabase.instance.database;
+      _storage.initUser(userId: _userId);
+    } catch (e) {
+      setState(() {
+        _status = 'Database initialization error: $e';
+      });
+    }
+    // Initialize SWIP asynchronously
     _initializeSWIP();
   }
 
@@ -83,6 +109,9 @@ class _SWIPExampleHomePageState extends State<SWIPExampleHomePage> {
       setState(() {
         _status = 'Initializing...';
       });
+
+      // Add a small delay to ensure UI is ready
+      await Future.delayed(const Duration(milliseconds: 100));
 
       await _swipManager.initialize();
 

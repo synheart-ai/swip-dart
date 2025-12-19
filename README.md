@@ -158,11 +158,10 @@ flutter test
 flutter test --coverage
 ```
 
-## License
+## 📄 License
 
-Copyright 2024 Synheart AI
+Apache 2.0 License
 
-Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for details.
 
 ## Support
 
@@ -173,3 +172,10 @@ Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for detai
 ---
 
 Part of the Synheart Wellness Impact Protocol (SWIP) open standard.
+
+
+## Patent Pending Notice
+
+This project is provided under an open-source license. Certain underlying systems, methods, and architectures described or implemented herein may be covered by one or more pending patent applications.
+
+Nothing in this repository grants any license, express or implied, to any patents or patent applications, except as provided by the applicable open-source license.
